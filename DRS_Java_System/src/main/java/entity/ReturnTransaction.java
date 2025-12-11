@@ -1,4 +1,4 @@
-package Entity;
+package entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,4 +23,5 @@ public class ReturnTransaction
 
     @OneToMany(mappedBy = "transaction", cascade = CascadeType.ALL)
     private List<ReturnItem> items;
+
 }
