@@ -1,0 +1,31 @@
+version: "3.8"
+
+#  docker compose up -d
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: minidrs-postgres
+    environment:
+      POSTGRES_USER: minidrs
+      POSTGRES_PASSWORD: minidrs
+      POSTGRES_DB: minidrs
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: minidrs-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@minidrs.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8081:80"
+    depends_on:
+      - postgres
+
+
+volumes:
+    pgdata:
