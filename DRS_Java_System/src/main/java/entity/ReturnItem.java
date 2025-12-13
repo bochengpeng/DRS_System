@@ -23,6 +23,19 @@ public class ReturnItem
     @ManyToOne
     @JoinColumn(name = "transaction_id", nullable = false)
     private ReturnTransaction transaction;
+
+    public boolean validateQuantity() {
+        return quantity > 0;
+    }
+
+    public boolean validateConsistency() {
+        boolean hasValidBottleType = bottleType != null;
+        boolean hasValidTransaction = transaction != null;
+        boolean quantityValid = validateQuantity();
+        boolean depositValid = bottleType != null && bottleType.validateDepositValue();
+
+        return hasValidBottleType && hasValidTransaction && quantityValid && depositValid;
+    }
 }
 
 //Controller → Service → Repository → Database
