@@ -1,10 +1,10 @@
-package controller;
+package org.example.drs.controller;
 
-import entity.ReturnItem;
-import entity.ReturnTransaction;
+import org.example.drs.entity.ReturnItem;
+import org.example.drs.entity.ReturnTransaction;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.ReturnService;
+import org.example.drs.service.ReturnService;
 
 @RestController
 @RequestMapping("/api/returns")
@@ -24,7 +24,7 @@ public class ReturnController
 
     @PostMapping("/transactions/{transactionId}/items")
     public ResponseEntity<ReturnItem> addItem(
-            @RequestParam Long transactionId,
+            @PathVariable Long transactionId,      // << here
             @RequestParam Long bottleTypeId,
             @RequestParam int quantity)
     {

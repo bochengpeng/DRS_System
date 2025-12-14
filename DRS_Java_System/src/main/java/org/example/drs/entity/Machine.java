@@ -1,7 +1,6 @@
-package entity;
+package org.example.drs.entity;
 
 import jakarta.persistence.*;
-import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

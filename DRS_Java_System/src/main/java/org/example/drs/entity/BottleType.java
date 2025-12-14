@@ -1,4 +1,4 @@
-package entity;
+package org.example.drs.entity;
 
 import lombok.*;
 import jakarta.persistence.*;

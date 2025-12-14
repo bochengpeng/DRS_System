@@ -1,4 +1,4 @@
-package entity;
+package org.example.drs.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,7 +19,6 @@ public class ReturnTransaction
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String machineId;
     private LocalDateTime timestamp;
     private BigDecimal totalDepositAmount;
 

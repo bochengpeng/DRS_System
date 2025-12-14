@@ -1,6 +1,6 @@
-package respository;
+package org.example.drs.repository;
 
-import entity.BottleType;
+import org.example.drs.entity.BottleType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
